@@ -1,0 +1,24 @@
+
+{% extends 'api/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Login</h1>
+</div>
+<script type="text/javascript">
+    window.history.forward();
+    function noBack() {
+        window.history.forward();
+    }
+</script>
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+
+
+{% endblock content %}
